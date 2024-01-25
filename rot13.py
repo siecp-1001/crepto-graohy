@@ -1,3 +1,4 @@
+import base64
 alpha ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 str_in = input("Enter message , like hello:")
 shft= 13
@@ -13,5 +14,8 @@ for i in range(n):
     newloc=(loc+shft)%26
    
     str_out += alpha[newloc]
-    
-print ("abfuscated version", str_out  )  
+a= str_out
+z= a.encode("UTF-8")  
+c= base64.b64encode(z)
+k= c.decode("UTF-8")  
+print ("abfuscated version", k)  
